@@ -30,21 +30,24 @@ A **MCP server** for scheduling and triggering reminders via Slack or Telegram.
 
 ## Environment Variables
 
-| Name                    | Description                                           |
-| ----------------------- | ----------------------------------------------------- |
-| `CRON_JOB_API_KEY`      | API key from [cron-job.org](https://cron-job.org/en/) |
-| `NOTIFICATION_PLATFORM` | `slack` or `telegram`                                 |
-| `SLACK_WEBHOOK_URL`     | (Slack only) Webhook URL for your channel             |
-| `TELEGRAM_BOT_TOKEN`    | (Telegram only) Bot token from @BotFather             |
-| `TELEGRAM_CHAT_ID`      | (Telegram only) Chat ID for your group/user           |
+| Name                    | Description                                       |
+| ----------------------- | ------------------------------------------------- |
+| `CRON_JOB_API_KEY`      | API key from [cron-job.org](https://cron-job.org) |
+| `NOTIFICATION_PLATFORM` | `slack` or `telegram`                             |
+| `SLACK_WEBHOOK_URL`     | (Slack only) Webhook URL for your channel         |
+| `TELEGRAM_BOT_TOKEN`    | (Telegram only) Bot token from @BotFather         |
+| `TELEGRAM_CHAT_ID`      | (Telegram only) Chat ID for your group/user       |
 
 ## Usage Examples
 
-You can use natural language instructions with LLM. Here are some examples:
+You can use natural language instructions with an LLM. Here are some examples:
 
-- `Remind me to call Alice at 3:00 PM tomorrow.`
-- `List all my reminders.`
-- `Delete the reminder titled "Call Alice".`
+- **Remind me to call Alice in 5 minutes.**
+- **Remind me to make a doctor appointment at 3:00 PM tomorrow.**
+- **List all my reminders.**
+- **Delete the reminder titled "Call Alice".**
+
+> **Note:** Reminders are required to be set at least 2 minutes ahead of time.
 
 ---
 
@@ -52,19 +55,19 @@ You can use natural language instructions with LLM. Here are some examples:
 
 ### Cron Job API Key
 
-- Register at [cron-job.org](https://cron-job.org/en/members/api/) and generate an API key.
+- Register at [cron-job.org](https://cron-job.org) and generate an API key.
 
 ### Slack Webhook URL
 
-1. Go to [Slack Apps](https://api.slack.com/apps)
-2. Create or select an app
-3. Add the 'Incoming Webhooks' feature
-4. Activate and create a webhook URL for your channel
-5. Set `SLACK_WEBHOOK_URL` in the configuration env
+1. Go to [Slack Apps](https://api.slack.com/apps).
+2. Create or select an app.
+3. Add the 'Incoming Webhooks' feature.
+4. Activate and create a webhook URL for your channel.
+5. Set `SLACK_WEBHOOK_URL` in the configuration env.
 
 ### Telegram Bot Token & Chat ID
 
-1. Create a bot with [@BotFather](https://t.me/BotFather)
-2. Add your bot to your group or message it directly
-3. Get your chat ID via the Telegram API: `https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates`
-4. Set `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` in the configuration env
+1. Create a bot with [@BotFather](https://t.me/BotFather).
+2. Add your bot to your group or message it directly.
+3. Get your chat ID via the Telegram API: `https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates`.
+4. Set `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` in the configuration env.
