@@ -1,13 +1,14 @@
 {
   "name": "reminder-mcp",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "A mcp server for scheduling and triggering reminders",
   "type": "module",
   "bin": {
     "reminder": "./build/index.js"
   },
   "scripts": {
-    "build": "tsc && chmod 755 build/index.js"
+    "build": "tsc && chmod 755 build/index.js",
+    "do-publish": "npm i && npm run build && npm publish"
   },
   "files": [
     "build"

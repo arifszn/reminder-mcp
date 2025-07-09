@@ -29,7 +29,9 @@ server.tool(
 
 server.tool(
   'create-reminder',
-  'Create a reminder',
+  `Create a reminder
+You MUST call this function before 'get-current-time' to obtain the current time.
+  `,
   {
     title: z.string().describe('The title of the reminder'),
     datetime: z.coerce
