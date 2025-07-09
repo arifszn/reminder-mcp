@@ -2,9 +2,17 @@
 
 A **MCP server** for scheduling and triggering reminders via Slack or Telegram.
 
+
 > **Reminders are delivered even if your server is not running.**
 >
 > This is possible because reminders are scheduled and triggered by an external service (cron-job.org), which will send the notification to Slack or Telegram at the scheduled time, regardless of your server's status.
+
+<br/>
+<p align="left">
+  <img src="https://github.com/user-attachments/assets/266debe9-f5fb-4e28-ab2b-57fc5c9ea8c5" alt="Preview" width="60%"/>
+  <br/>
+  <img src="https://github.com/user-attachments/assets/35b45773-16fa-4257-bc87-f6ec12583198" width="50%" alt="Shadow"/>
+</p>
 
 ## Configuration
 
