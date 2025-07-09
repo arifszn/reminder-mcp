@@ -1,6 +1,6 @@
 {
   "name": "reminder-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A mcp server for scheduling and triggering reminders",
   "type": "module",
   "bin": {
@@ -12,8 +12,15 @@
   "files": [
     "build"
   ],
-  "author": "",
+  "author": "arifszn",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arifszn/reminder-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arifszn/reminder-mcp/issues"
+  },
   "devDependencies": {
     "@types/node": "^24.0.10",
     "typescript": "^5.8.3"
@@ -71,5 +78,22 @@
     "yn": "^3.1.1",
     "zod": "^3.25.75"
   },
-  "keywords": []
+  "keywords": [
+    "reminder",
+    "mcp",
+    "LLM",
+    "LLM-server",
+    "AI",
+    "AItools",
+    "ModelContextProtocol",
+    "mcp-server",
+    "scheduler",
+    "cron",
+    "slack",
+    "telegram",
+    "notification",
+    "server",
+    "automation",
+    "nodejs"
+  ]
 }
