@@ -1,14 +1,16 @@
 {
   "name": "reminder-mcp",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "A mcp server for scheduling and triggering reminders",
   "type": "module",
   "bin": {
-    "reminder": "./build/index.js"
+    "reminder": "./build/index.js",
+    "reminder-mcp": "./build/index.js"
   },
   "scripts": {
     "build": "tsc && chmod 755 build/index.js",
-    "do-publish": "npm i && npm run build && npm publish"
+    "do-publish": "npm i && npm run build && npm publish",
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "build"
@@ -27,7 +29,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.15.0",
+    "@modelcontextprotocol/sdk": "^1.17.4",
     "accepts": "^2.0.0",
     "acorn": "^8.15.0",
     "acorn-walk": "^8.3.4",
