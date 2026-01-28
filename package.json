@@ -1,6 +1,6 @@
 {
   "name": "reminder-mcp",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A mcp server for scheduling and triggering reminders",
   "type": "module",
   "bin": {
