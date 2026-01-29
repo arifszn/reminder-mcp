@@ -136,3 +136,6 @@ build/
 # data
 src/data/*
 !src/data/answers.txt.example
+
+# npm config
+.npmrc
