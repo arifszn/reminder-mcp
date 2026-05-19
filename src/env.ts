@@ -12,6 +12,10 @@ const envSchema = z.discriminatedUnion('NOTIFICATION_PLATFORM', [
     TELEGRAM_BOT_TOKEN: z.string(),
     TELEGRAM_CHAT_ID: z.string(),
   }),
+  z.object({
+    NOTIFICATION_PLATFORM: z.literal(NotificationPlatform.DISCORD),
+    DISCORD_WEBHOOK_URL: z.string().url(),
+  }),
 ]);
 
 const baseSchema = z.object({
@@ -42,6 +46,9 @@ if (!parsedEnv.success) {
   if (errors.TELEGRAM_CHAT_ID) {
     errorMessages.push('- TELEGRAM_CHAT_ID is required when using Telegram notification platform');
   }
+  if (errors.DISCORD_WEBHOOK_URL) {
+    errorMessages.push('- DISCORD_WEBHOOK_URL is required when using Discord notification platform');
+  }
 
   const errorMessage = `
 ❌ Missing or invalid environment variables:
@@ -49,7 +56,7 @@ ${errorMessages.join('\n')}
 
 Required environment variables:
 - CRON_JOB_API_KEY: Your API key from cron-job.org
-- NOTIFICATION_PLATFORM: Either "slack" or "telegram"
+- NOTIFICATION_PLATFORM: Either "slack", "telegram", or "discord"
 
 For Slack:
 - SLACK_WEBHOOK_URL: Your Slack webhook URL
@@ -57,6 +64,9 @@ For Slack:
 For Telegram:
 - TELEGRAM_BOT_TOKEN: Your bot token from @BotFather
 - TELEGRAM_CHAT_ID: Your chat ID
+
+For Discord:
+- DISCORD_WEBHOOK_URL: Your Discord webhook URL
 
 Please set these environment variables and try again.
   `.trim();

@@ -142,6 +142,11 @@ export class ReminderService {
             text: `🔔 Reminder: ${title}`,
           }),
         };
+      case NotificationPlatform.DISCORD:
+        return {
+          url: env.DISCORD_WEBHOOK_URL,
+          requestBody: JSON.stringify({ content: `🔔 Reminder: ${title}` }),
+        };
       default:
         throw new Error('Invalid notification platform');
     }
