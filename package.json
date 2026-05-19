@@ -45,6 +45,7 @@
     "scheduler",
     "cron",
     "slack",
+    "discord",
     "telegram",
     "notification",
     "server",

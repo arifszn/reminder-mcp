@@ -26,7 +26,8 @@ A **MCP server** for scheduling and triggering reminders via Slack or Telegram.
         "NOTIFICATION_PLATFORM": "slack",
         "SLACK_WEBHOOK_URL": "https://hooks.slack.com/services/xxxxxxx",
         "TELEGRAM_BOT_TOKEN": "",
-        "TELEGRAM_CHAT_ID": ""
+        "TELEGRAM_CHAT_ID": "",
+        "DISCORD_WEBHOOK_URL": ""
       }
     }
   }
@@ -38,10 +39,11 @@ A **MCP server** for scheduling and triggering reminders via Slack or Telegram.
 | Name                    | Description                                       |
 | ----------------------- | ------------------------------------------------- |
 | `CRON_JOB_API_KEY`      | API key from [cron-job.org](https://cron-job.org) |
-| `NOTIFICATION_PLATFORM` | `slack` or `telegram`                             |
+| `NOTIFICATION_PLATFORM` | `slack`, `telegram`, or `discord`                 |
 | `SLACK_WEBHOOK_URL`     | (Slack only) Webhook URL for your channel         |
 | `TELEGRAM_BOT_TOKEN`    | (Telegram only) Bot token from @BotFather         |
 | `TELEGRAM_CHAT_ID`      | (Telegram only) Chat ID for your group/user       |
+| `DISCORD_WEBHOOK_URL`   | (Discord only) Webhook URL for your channel       |
 
 ## Usage Examples
 
@@ -76,3 +78,10 @@ You can use natural language instructions with an LLM. Here are some examples:
 2. Add your bot to your group or message it directly.
 3. Get your chat ID via the Telegram API: `https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates`.
 4. Set `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` in the configuration env.
+
+### Discord Webhook URL
+
+1. Open your Discord server settings and go to **Integrations > Webhooks**.
+2. Click **New Webhook** or select an existing one.
+3. Copy the webhook URL.
+4. Set `DISCORD_WEBHOOK_URL` in the configuration env.
